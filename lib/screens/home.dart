@@ -9,23 +9,32 @@ class HomeScreen extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: const Color(0xff1f1f1f),
-        body: SingleChildScrollView(
-            child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const SizedBox(height: 100),
-              Text(
-                'hey',
-                style: GoogleFonts.openSans(
-                  color: const Color(0xffffffff),
-                  fontSize: 40,
-                ),
-              )
-            ],
-          ),
-        )),
+        body: SafeArea(
+          child: SingleChildScrollView(
+              child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(
+                  children: [
+                    const CircleAvatar(
+                      radius: 20,
+                      backgroundImage: AssetImage('lib/assets/images/cat.jpg'),
+                    ),
+                    Text(
+                      'hey',
+                      style: GoogleFonts.openSans(
+                        color: const Color(0xffffffff),
+                        fontSize: 40,
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          )),
+        ),
       ),
     );
   }
