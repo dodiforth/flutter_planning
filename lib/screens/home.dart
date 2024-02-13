@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../widgets/card_task.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -15,22 +16,65 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const CircleAvatar(
-                      radius: 20,
+                    CircleAvatar(
+                      radius: 30,
                       backgroundImage: AssetImage('lib/assets/images/cat.jpg'),
                     ),
-                    Text(
-                      'hey',
-                      style: GoogleFonts.openSans(
-                        color: const Color(0xffffffff),
-                        fontSize: 40,
-                      ),
+                    Icon(
+                      Icons.add,
+                      color: Colors.white,
+                      size: 40,
                     ),
                   ],
-                )
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  'MONDAY 16',
+                  style: GoogleFonts.openSans(
+                      textStyle: const TextStyle(
+                    color: Color(0xffffffff),
+                  )),
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        width: 160.0,
+                        height: 100.0, // Add this
+                        color: Colors.red,
+                      ),
+                      Container(
+                        width: 160.0,
+                        height: 100.0, // Add this
+                        color: Colors.blue,
+                      ),
+                      Container(
+                        width: 160.0,
+                        height: 100.0, // Add this
+                        color: Colors.green,
+                      ),
+                      Container(
+                        width: 160.0,
+                        height: 100.0, // Add this
+                        color: Colors.yellow,
+                      ),
+                      Container(
+                        width: 160.0,
+                        height: 100.0, // Add this
+                        color: Colors.orange,
+                      ),
+                    ],
+                  ),
+                ),
+                const CardTask(),
               ],
             ),
           )),
